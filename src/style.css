@@ -1,0 +1,147 @@
+* {
+   box-sizing: border-box;
+   font-family: 'Oxanium';
+}
+
+.btn__esquerda {
+   position: absolute;
+   left: 66%;
+   bottom: 16.7%;
+   border: transparent;
+   background-color: rgba(229, 228, 226, 0.863);
+}
+
+.btn__direita {
+   position: absolute;
+   left: 71.3%;
+   bottom: 16.7%;
+   border: transparent;
+   background-color: rgba(229, 228, 226, 0.881);
+}
+
+.btn__start {
+   border: solid 2px transparent;
+   width: 30%;
+   color: rgb(106, 133, 59);
+   box-shadow: -3px 0px 1px rgb(169, 162, 152), -3px 3px 1px rgb(169, 162, 152);
+   font-size: 12px;
+   margin-top: 2px;
+}
+
+.btn__select {
+   border: solid 2px transparent;
+   width: 30%;
+   color: rgb(106, 133, 59);
+   margin-right: 20px;
+   margin-top: 2px;
+   box-shadow: -3px 0px 1px rgb(169, 162, 152), -3px 3px 1px rgb(169, 162, 152);
+   font-size: 12px;
+}
+
+/*.btn__select:active {
+   box-shadow: 4px -2px 1px rgba(169, 162, 152, 0.685), 0px -3px 1px rgba(169, 162, 152, 0.58);
+   font-size: 11px;
+}*/
+
+.btn__start:active {
+   box-shadow: 4px -2px 1px rgba(169, 162, 152, 0.685), 0px -3px 1px rgba(169, 162, 152, 0.58);
+   font-size: 11px;
+}
+
+.botoes__centrais {
+   position: absolute;
+   width: 20%; 
+   align-items: center;
+   height: 5%;  
+   bottom: 10.3%;
+   left: 33%;
+   font-family: monospace;
+   text-align: center;
+}
+
+.circulo {
+   position: absolute;
+   top: 79.4%;
+   width: 6.7%;
+   left: 11.5%;
+   border: solid;
+   border-radius: 50%;
+   border-color: aqua;
+   background-color: aqua;
+   box-shadow: 0px 0px 75px 10px aqua;
+   background-image: linear-gradient(to top right, rgba(247, 247, 247, 0.5) 20%, rgba(50, 193, 255, 0.3) 60%, rgba(50, 53, 255, 0.317)) !important;
+}
+
+.circulo__cima {
+   position: absolute;
+   top: 17.50%;
+   width: 6.7%;
+   left: 39.72%;
+   border: solid;
+   border-radius: 50%;
+   border-color: greenyellow;
+   background-color: greenyellow;
+   box-shadow: 0px 0px 75px 10px rgb(0,255,0);
+   background-image: linear-gradient(to top right, rgba(247, 247, 247, 0.5) 20%, rgba(31, 209, 84, 0.3) 60%, rgba(122, 198, 133, 0.317)) !important;
+   box-shadow: 0px 0px 75px 10px rgb(0,255,0);
+}
+
+
+@font-face {
+   font-family: 'Oxanium';
+   src: url('/assets/fonts/Pokemon GB.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+.form {
+   position: absolute;
+   bottom: 17%;
+   left: 27%;
+}
+
+main {
+   display: block;
+   padding: 15px;
+   position: relative;
+}
+
+.pokemon__data {
+   position: absolute;
+   font-weight: 600;
+   top: 57%;
+   left: 28%;
+   font-size: clamp(5px, 2vw, 20px);
+}
+
+.pokemon__image {
+   position: absolute;
+   width: 10%;
+   left: 47%;
+   bottom: 27%;
+   height: 15%;
+}
+
+.pokemon__nome {
+   text-transform: capitalize;
+}
+
+.pokemon__search {
+   width: 153%;
+   border: solid 2px grey;
+   color: orangered;
+   font-weight: 600;
+   text-align: center;
+   font-size: clamp(4px, 1vw, 16px);
+   text-transform: lowercase;
+}
+
+.pokemon__tipo {
+   text-transform: lowercase;
+   font-size: clamp(5px, 1vw, 12px);
+}
+
+.pokedex {
+   width: 80%;
+   max-width: 80%;
+}
