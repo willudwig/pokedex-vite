@@ -8,11 +8,18 @@ const pokeBotao  = document.getElementById("pesquisar")    as HTMLButtonElement;
 const pokeImagem = document.getElementById("imagem")       as HTMLImageElement;
 const pokeForm   = document.getElementById("formPesquisa") as HTMLFormElement;
 
+const btnEsquerda = document.querySelector(".btn__esquerda");
+const btnDireita = document.querySelector(".btn__direita");
+
+let idNavegador: number = 1;
+
 //==========================================================================
 
 obterDadosJson('1');
 pokeBotao.addEventListener("click", () => obterDadosJson(pokeSearch.value));
 pesquisarTeclaEnter();
+navegarEsquerda();
+navegarDireita();
 
 //==========================================================================
 
@@ -28,6 +35,8 @@ async function obterDadosJson(pokemon: string)
          pokeTipo.innerText = "." + pokeobjeto.types[0].type.name;
          pokeImagem.src = pokeobjeto['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
          pokeSearch.value = "";
+
+         idNavegador = pokeobjeto.id
       }
       
    } catch (error) {
@@ -41,3 +50,22 @@ function pesquisarTeclaEnter(): void {
       obterDadosJson(pokeSearch.value);
    });
 }
+
+function navegarEsquerda() {
+   btnEsquerda?.addEventListener("click", () => {
+      idNavegador--;
+
+      if(idNavegador < 1)
+         idNavegador = 1;
+
+      obterDadosJson(idNavegador.toString());
+   });
+}
+
+function navegarDireita() {
+   btnDireita?.addEventListener("click", () => {
+      idNavegador++;
+      obterDadosJson(idNavegador.toString());
+   });
+}
+
