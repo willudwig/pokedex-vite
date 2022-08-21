@@ -1,4 +1,4 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 const pokeNumero = document.getElementById("numero")       as HTMLSpanElement;
 const pokeNome   = document.getElementById("nome")         as HTMLSpanElement;
@@ -17,10 +17,12 @@ let idNavegador: number = 1;
 //==========================================================================
 
 obterDadosJson('1');
-pokeBotao.addEventListener("click", () => obterDadosJson(pokeSearch.value));
+pokeBotao.addEventListener( "click", () => obterDadosJson(pokeSearch.value) );
 pesquisarTeclaEnter();
 navegarEsquerda();
 navegarDireita();
+
+pokeForm.addEventListener( "click", () => {pokeStatus.innerText ="";} );
 
 //==========================================================================
 

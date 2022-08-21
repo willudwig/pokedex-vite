@@ -114,6 +114,15 @@ main {
    position: relative;
 }
 
+.pokedex__status {
+   font-size: 55%;
+   left: 52%;
+   position: absolute;
+   bottom: 20%;
+   color: blueviolet;
+   font-weight: 600;
+}
+
 .pokemon__data {
    position: absolute;
    font-weight: 600;
@@ -142,16 +151,7 @@ main {
    text-align: center;
    font-size: clamp(4px, 1vw, 16px);
    text-transform: lowercase;
-}
-
-.pokemon__status {
-   font-size: 55%;
-   left: 52%;
-   position: absolute;
-   bottom: 20%;
-   color: blueviolet;
-   font-weight: 600;
-   
+   width: clamp(5px, 2vw 20%);
 }
 
 .pokemon__tipo {
