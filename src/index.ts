@@ -1,15 +1,17 @@
 import axios from "axios";
 
-const pokeNumero = document.getElementById("numero")    as HTMLSpanElement;
-const pokeNome   = document.getElementById("nome")      as HTMLSpanElement;
-const pokeTipo   = document.getElementById("tipo")      as HTMLSpanElement;
-const pokeSearch = document.getElementById("search")    as HTMLInputElement;
-const pokeBotao  = document.getElementById("pesquisar") as HTMLButtonElement;
-const pokeImagem = document.getElementById("imagem")    as HTMLImageElement;
+const pokeNumero = document.getElementById("numero")       as HTMLSpanElement;
+const pokeNome   = document.getElementById("nome")         as HTMLSpanElement;
+const pokeTipo   = document.getElementById("tipo")         as HTMLSpanElement;
+const pokeSearch = document.getElementById("search")       as HTMLInputElement;
+const pokeBotao  = document.getElementById("pesquisar")    as HTMLButtonElement;
+const pokeImagem = document.getElementById("imagem")       as HTMLImageElement;
+const pokeForm   = document.getElementById("formPesquisa") as HTMLFormElement;
 
 //==========================================================================
 
 pokeBotao.addEventListener("click", () => obterDadosJson(pokeSearch.value));
+pesquisarTeclaEnter();
 
 //==========================================================================
 
@@ -26,4 +28,11 @@ async function obterDadosJson(pokemon: string)
    } catch (error) {
       console.log(error);
    }
+}
+
+function pesquisarTeclaEnter(): void {
+   pokeForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      obterDadosJson(pokeSearch.value);
+   });
 }
