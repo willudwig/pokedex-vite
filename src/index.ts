@@ -10,6 +10,7 @@ const pokeForm   = document.getElementById("formPesquisa") as HTMLFormElement;
 
 //==========================================================================
 
+obterDadosJson('1');
 pokeBotao.addEventListener("click", () => obterDadosJson(pokeSearch.value));
 pesquisarTeclaEnter();
 
@@ -20,10 +21,14 @@ async function obterDadosJson(pokemon: string)
    try {
       const pokeresposta = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`, {responseType: 'json'});
       const pokeobjeto = pokeresposta.data;
-      pokeNumero.innerText = pokeobjeto.id + ".";
-      pokeNome.innerText = pokeobjeto.name;
-      pokeTipo.innerText = "." + pokeobjeto.types[0].type.name;
-      pokeImagem.src = pokeobjeto['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+
+      if(pokeobjeto) {
+         pokeNumero.innerText = pokeobjeto.id + ".";
+         pokeNome.innerText = pokeobjeto.name;
+         pokeTipo.innerText = "." + pokeobjeto.types[0].type.name;
+         pokeImagem.src = pokeobjeto['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+         pokeSearch.value = "";
+      }
       
    } catch (error) {
       console.log(error);
