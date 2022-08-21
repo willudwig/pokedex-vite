@@ -19,6 +19,14 @@
    background-color: rgba(229, 228, 226, 0.881);
 }
 
+.btn__direita:active {
+   color: rgb(157, 157, 157);
+}
+
+.btn__esquerda:active {
+   color: rgb(157, 157, 157);
+}
+
 .btn__start {
    border: solid 2px transparent;
    width: 30%;
@@ -134,6 +142,16 @@ main {
    text-align: center;
    font-size: clamp(4px, 1vw, 16px);
    text-transform: lowercase;
+}
+
+.pokemon__status {
+   font-size: 55%;
+   left: 52%;
+   position: absolute;
+   bottom: 20%;
+   color: blueviolet;
+   font-weight: 600;
+   
 }
 
 .pokemon__tipo {

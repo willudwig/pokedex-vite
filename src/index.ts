@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 const pokeNumero = document.getElementById("numero")       as HTMLSpanElement;
 const pokeNome   = document.getElementById("nome")         as HTMLSpanElement;
@@ -7,6 +7,7 @@ const pokeSearch = document.getElementById("search")       as HTMLInputElement;
 const pokeBotao  = document.getElementById("pesquisar")    as HTMLButtonElement;
 const pokeImagem = document.getElementById("imagem")       as HTMLImageElement;
 const pokeForm   = document.getElementById("formPesquisa") as HTMLFormElement;
+const pokeStatus   = document.getElementById("status")     as HTMLSpanElement;
 
 const btnEsquerda = document.querySelector(".btn__esquerda");
 const btnDireita = document.querySelector(".btn__direita");
@@ -26,6 +27,7 @@ navegarDireita();
 async function obterDadosJson(pokemon: string) 
 {
    try {
+      pokeStatus.innerText ="Loading..."
       const pokeresposta = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`, {responseType: 'json'});
       const pokeobjeto = pokeresposta.data;
 
@@ -36,11 +38,13 @@ async function obterDadosJson(pokemon: string)
          pokeImagem.src = pokeobjeto['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
          pokeSearch.value = "";
 
-         idNavegador = pokeobjeto.id
+         idNavegador = pokeobjeto.id;
+         pokeStatus.innerText ="";
       }
       
    } catch (error) {
       console.log(error);
+      pokeStatus.innerText = "Not Found.";
    }
 }
 
